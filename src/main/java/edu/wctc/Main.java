@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidBirthdayException, MissingNameException, UnknownGenderCodeException {
 	Scanner reader = new Scanner(System.in);
         System.out.println("Enter First Name: ");
         String fName = reader.nextLine().toUpperCase();
@@ -30,7 +30,7 @@ public class Main {
         }
 
         catch(MissingNameException | UnknownGenderCodeException | InvalidBirthdayException m){
-
+            throw m;
         }
         WisconsinFormatter wisFormat = new WisconsinFormatter();
         FloridaFormatter floFormat = new FloridaFormatter();
